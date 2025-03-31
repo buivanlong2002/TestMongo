@@ -1,0 +1,11 @@
+[build]
+  functions = "functions"
+  command = "npm install"  # Đảm bảo cài đặt dependencies trước khi build
+
+[functions]
+  node_bundler = "esbuild"  # Giúp giảm kích thước file function
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
